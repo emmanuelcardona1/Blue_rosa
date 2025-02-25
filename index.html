@@ -341,22 +341,39 @@
 </head>
 
 <body>
-    <header class="flex justify-between items-center px-6 md:px-12 py-4 bg-[#0d1b2a] text-white shadow-lg fixed top-0 w-full z-50">
+    <<header class="flex justify-between items-center px-6 md:px-12 py-4 bg-[#0d1b2a] text-white shadow-lg fixed top-0 w-full z-50">
         <!-- Logo con degradado llamativo -->
-        <div class="logo text-3xl md:text-4xl font-extrabold tracking-widest uppercase bg-gradient-to-r from-[#3ca6e9] to-[#ff7eb3] text-transparent bg-clip-text drop-shadow-lg">
+        <div class="text-3xl md:text-4xl font-extrabold tracking-widest uppercase bg-gradient-to-r from-[#3ca6e9] to-[#ff7eb3] text-transparent bg-clip-text drop-shadow-lg">
             🌹 Blue Rosa 🌹
         </div>
     
-        <!-- Menú de Navegación -->
-        <nav>
-            <ul class="flex space-x-6 md:space-x-10 text-lg font-semibold">
-                <li><a href="#home" class="nav-link">Inicio</a></li>
-                <li><a href="#products" class="nav-link">Productos</a></li>
-                <li><a href="#about" class="nav-link">Nosotros</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <!-- Botón del menú hamburguesa -->
+        <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+            ☰
+        </button>
+    
+        <!-- Menú de Navegación (oculto en móviles) -->
+        <nav id="menu" class="absolute top-16 left-0 w-full bg-[#0d1b2a] text-center py-4 hidden md:block md:static md:w-auto">
+            <ul class="flex flex-col md:flex-row md:space-x-6 text-lg font-semibold">
+                <li><a href="#home" class="nav-link block py-2">Inicio</a></li>
+                <li><a href="#products" class="nav-link block py-2">Productos</a></li>
+                <li><a href="#about" class="nav-link block py-2">Nosotros</a></li>
+                <li><a href="#contacto" class="nav-link block py-2">Contacto</a></li>
             </ul>
         </nav>
     </header>
+    
+    <!-- Script para abrir/cerrar el menú en móviles -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+    
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    
+    
     
     <style>
         /* Importar fuente llamativa */
